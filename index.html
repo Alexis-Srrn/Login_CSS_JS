@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/script.js" defer></script>
+    <title>Main</title>
+</head>
+<body>
+    
+    <header>
+        <h2 class="logo">Logo</h2>
+        <nav class="navigation">
+            <a class="navigation__link" href="#">Home</a>
+            <a class="navigation__link" href="#">About</a>
+            <a class="navigation__link" href="#">Services</a>
+            <a class="navigation__link" href="#">Contact</a>
+            <button class="navigation__btn-Login">Login</button>
+        </nav>
+    </header>
+
+    <!--Inicio del contenedor-->
+    <div class="container">
+        <span class="icon-close">
+            <ion-icon name="close-outline"></ion-icon>
+        </span>
+
+    <!--Contenedor del formulario de login-->
+        <div class="conatiner__form-box login">
+            <h2 class="login__subtitle">Login</h2>
+        
+            <form action="#" autocomplete="off">
+                <div class="login__input-box">
+                    <span class="login__icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
+                    <input class="login__input" type="email" name="email" required>
+                    <label class="login__label" for="email">Email</label>
+                </div>
+
+                <div class="login__input-box">
+                    <span class="login__icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <input class="login__input" type="password" name="password" required>
+                    <label class="login__label" for="password">Password</label>
+                </div>
+
+                <div class="login__remember-forgot">
+                    <label>
+                        <input class="remember-forgot__checkbox" type="checkbox" name="">
+                        <p class="remember-forgot__text">Remember me</p>
+                    </label>
+                    <a class="remember-forgot__link" href="#">Forgot Password?</a>
+                </div>
+
+
+                <button type="submit" class="login__btn">Login</button>
+
+                <div class="login__register">
+                    <p>Don't have an account? 
+                        <a href="#" class="register__link">Register</a>
+                    </p>
+                </div>
+            </form>
+
+        </div>
+
+     
+    <!--Contenedor del formulario de registro-->    
+        <div class="conatiner__form-box register">
+            <h2 class="login__subtitle">Registration</h2>
+        
+            <form action="#" autocomplete="off">
+
+                <div class="login__input-box">
+                    <span class="login__icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <input class="login__input" type="text" name="username" required>
+                    <label class="login__label" for="username">Username</label>
+                </div>
+
+                <div class="login__input-box">
+                    <span class="login__icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
+                    <input class="login__input" type="email" name="email" required>
+                    <label class="login__label" for="email">Email</label>
+                </div>
+
+                <div class="login__input-box">
+                    <span class="login__icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <input class="login__input" type="password" name="password" required>
+                    <label class="login__label" for="password">Password</label>
+                </div>
+
+                <div class="login__remember-forgot">
+                    <label>
+                        <input class="remember-forgot__checkbox" type="checkbox" name="">
+                        <p class="remember-forgot__text">I agree to the terms & conditions</p>
+                    </label>
+                    
+                </div>
+
+
+                <button type="submit" class="login__btn">Register</button>
+
+                <div class="login__register">
+                    <p>Already have an account? 
+                        <a href="#" class="login__link">Login</a>
+                    </p>
+                </div>
+            </form>
+
+        </div>
+
+
+
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --color-white: #fff;
+    --color-principal: #162938;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+html{
+    font-size: 10px; /* 100% = 16px */
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../img/flat-design-forest-landscape.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+/*ELEMENTOS DEL HEADER*/
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 2rem 10rem;
+    background-color: var(--color-principal);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.8;
+    z-index: 99;
+}
+
+.logo{
+    font-size: 2em;
+    color: var(--color-white);
+    user-select: none;
+}
+
+.navigation__link{
+    position: relative;
+    font-size: 1.6rem;
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 4rem;
+}
+
+
+.navigation__link::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: var(--color-white);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: all 300ms ease-in-out;
+}
+
+.navigation__link:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
+.navigation__btn-Login{
+    width: 13rem;
+    height: 5rem;
+    background: transparent;
+    border: 2px solid var(--color-white);
+    outline: none;
+    border-radius: 6px;   
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: var(--color-white);
+    font-weight: 500;
+    margin-left: 4rem;
+}
+
+.navigation__btn-Login:hover{
+    background: var(--color-white);
+    color: var(--color-principal);
+
+}
+
+
+/*FORMULARIO DE LOGIN*/
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40rem;
+    height: 44rem;
+    margin-top: 60px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+
+    /*Para ocultar el pedacito que sobresale del .icon-close
+    TAMBIEN PARA OCULTAR LOS MENUS DE LOGIN Y REGISTER QUE PONEMOS
+    CON JS
+    */
+    overflow: hidden;
+    transform: scale(0);
+    transition: all .2s ease;
+}
+
+
+/*ATRIBUTO POPUP AÑADIDO CON js*/
+.active-popup{
+    transform: scale(1);
+}
+
+/*Atributo active añadido al container con JS*/
+.container.active{
+    height: 520px;
+}
+
+.conatiner__form-box{
+    width: 100%;
+    padding: 4rem;
+}
+
+
+.conatiner__form-box.login{
+   transition: all .18s ease;
+   transform: translateX(0);
+}
+
+.container.active .conatiner__form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+ }
+
+.conatiner__form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+
+.container.active .conatiner__form-box.register{
+    transition: all .18s ease;
+    transform: translateX(0);
+ }
+
+
+/*Icono de cerrar el login*/
+
+.icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    background:var(--color-principal);
+    font-size: 3rem;
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+.login__subtitle{
+    font-size: 3rem;
+    color: var(--color-principal);
+    text-align: center;
+}
+
+.login__input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid var(--color-principal);
+    margin: 30px 0;
+}
+
+.login__label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    color: var(--color-principal);
+    font-weight: 500;
+    pointer-events: none;
+    transition: all 500ms ease-in-out;
+}
+
+.login__input:focus~.login__label,
+.login__input:valid~.login__label{
+    top: -5px;
+}
+
+
+.login__input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    color: var(--color-principal);
+    font-weight: 600;
+    padding: 35px 5px;
+}
+
+.login__icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.6rem;
+    color: var(--color-principal);
+    line-height: 57px;
+}
+
+/*CHECKBOX REMEMBER ME*/
+
+.login__remember-forgot{
+    font-size: 1.2rem;
+    color: var(--color-principal);
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot__checkbox{
+    accent-color: var(--color-principal);
+    margin-right: 3px;
+}
+
+.remember-forgot__text{
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.remember-forgot__text:hover{
+    text-decoration: underline;
+}
+
+.remember-forgot__link{
+    color: var(--color-principal);
+    text-decoration: none;
+}
+
+.remember-forgot__link:hover{
+    text-decoration: underline;
+}
+
+/*BOTON LOGIN*/
+.login__btn{
+    width: 100%;
+    height: 45px;
+    background-color: var(--color-principal);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--color-white);
+}
+
+/*REMEMBER ME*/
+
+.login__register{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-white);
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register__link{
+    color: var(--color-principal);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register__link:hover{
+    text-decoration: underline;
+}
